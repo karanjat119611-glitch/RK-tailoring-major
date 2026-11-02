@@ -1,0 +1,94 @@
+{
+  "entities": {
+    "TailoringOrder": {
+      "title": "TailoringOrder",
+      "description": "Ladies tailoring order with customer details, measurements, photos, status, and pricing.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Document ID of the order"
+        },
+        "userId": {
+          "type": "string",
+          "description": "Tailor shop owner user ID"
+        },
+        "customerName": {
+          "type": "string",
+          "description": "Customer name"
+        },
+        "customerPhone": {
+          "type": "string",
+          "description": "Customer phone number"
+        },
+        "dressType": {
+          "type": "string",
+          "enum": ["suit_kurti", "blouse", "salwar", "lehenga", "frock_gown", "other"],
+          "description": "Type of ladies dress being tailored"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["received", "stitching", "ready", "delivered"],
+          "description": "Current status of the tailoring order"
+        },
+        "measurements": {
+          "type": "object",
+          "description": "Tailoring measurements for length, chest, sleeves, waist, etc."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Design instructions, lining, piping, tassels, and notes"
+        },
+        "photoUris": {
+          "type": "array",
+          "description": "List of photo URIs or image identifiers for fabric, design, and pattern"
+        },
+        "deliveryDate": {
+          "type": "string",
+          "description": "Promised delivery date in YYYY-MM-DD format"
+        },
+        "totalAmount": {
+          "type": "number",
+          "description": "Total tailoring charge in Rupees"
+        },
+        "advanceAmount": {
+          "type": "number",
+          "description": "Advance payment received"
+        },
+        "pendingAmount": {
+          "type": "number",
+          "description": "Remaining payment due"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation timestamp. Must be FieldValue.serverTimestamp()."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp. Must be FieldValue.serverTimestamp()."
+        }
+      },
+      "required": [
+        "userId",
+        "customerName",
+        "customerPhone",
+        "dressType",
+        "status",
+        "totalAmount",
+        "advanceAmount",
+        "pendingAmount",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/orders/{orderId}": {
+      "schema": {
+        "$ref": "#/entities/TailoringOrder"
+      },
+      "description": "Collection of ladies tailoring orders managed by a specific user."
+    }
+  }
+}

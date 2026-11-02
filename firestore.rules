@@ -1,0 +1,68 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global safety catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isValidTailoringOrder(data) {
+      return data.userId is string && data.userId == request.auth.uid &&
+             data.customerName is string && data.customerName.size() >= 1 && data.customerName.size() <= 100 &&
+             data.customerPhone is string && data.customerPhone.size() >= 5 && data.customerPhone.size() <= 25 &&
+             data.dressType is string && data.dressType.size() <= 50 &&
+             data.status in ['received', 'stitching', 'ready', 'delivered'] &&
+             data.totalAmount is number && data.totalAmount >= 0 &&
+             data.advanceAmount is number && data.advanceAmount >= 0 &&
+             data.pendingAmount is number &&
+             (!('notes' in data) || data.notes == null || (data.notes is string && data.notes.size() <= 1000)) &&
+             (!('deliveryDate' in data) || data.deliveryDate == null || (data.deliveryDate is string && data.deliveryDate.size() <= 20)) &&
+             (!('measurements' in data) || data.measurements == null || data.measurements is map) &&
+             (!('photoUris' in data) || data.photoUris == null || (data.photoUris is list && data.photoUris.size() <= 10));
+    }
+
+    match /users/{userId}/orders/{orderId} {
+      allow get, list: if isSignedIn() && request.auth.uid == userId;
+
+      allow create: if isSignedIn() &&
+                       request.auth.uid == userId &&
+                       isValidId(orderId) &&
+                       incoming().userId == userId &&
+                       incoming().createdAt is timestamp &&
+                       incoming().createdAt <= request.time &&
+                       incoming().keys().hasAll(['userId', 'customerName', 'customerPhone', 'dressType', 'status', 'totalAmount', 'advanceAmount', 'pendingAmount', 'createdAt']) &&
+                       incoming().keys().hasOnly(['userId', 'customerName', 'customerPhone', 'dressType', 'status', 'measurements', 'notes', 'photoUris', 'deliveryDate', 'totalAmount', 'advanceAmount', 'pendingAmount', 'createdAt', 'updatedAt']) &&
+                       isValidTailoringOrder(incoming());
+
+      allow update: if isSignedIn() &&
+                       request.auth.uid == userId &&
+                       isValidId(orderId) &&
+                       incoming().userId == userId &&
+                       incoming().createdAt == existing().createdAt &&
+                       (!('updatedAt' in incoming()) || (incoming().updatedAt is timestamp && incoming().updatedAt <= request.time)) &&
+                       isValidTailoringOrder(incoming()) &&
+                       incoming().diff(existing()).affectedKeys().hasOnly(['customerName', 'customerPhone', 'dressType', 'status', 'measurements', 'notes', 'photoUris', 'deliveryDate', 'totalAmount', 'advanceAmount', 'pendingAmount', 'updatedAt']);
+
+      allow delete: if isSignedIn() &&
+                       request.auth.uid == userId &&
+                       isValidId(orderId);
+    }
+  }
+}

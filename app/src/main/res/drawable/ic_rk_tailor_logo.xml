@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+
+    <!-- Outer Circular Badge with Gradient -->
+    <path
+        android:pathData="M48,4 A44,44 0 1,0 48,92 A44,44 0 1,0 48,4 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="48"
+                android:startY="4"
+                android:endX="48"
+                android:endY="92"
+                android:startColor="#0284C7"
+                android:endColor="#0F172A"
+                android:type="linear" />
+        </aapt:attr>
+    </path>
+
+    <!-- Golden Ring (Measuring Tape Motif) -->
+    <path
+        android:strokeColor="#FBBF24"
+        android:strokeWidth="2.5"
+        android:fillColor="#00000000"
+        android:pathData="M48,10 A38,38 0 1,0 48,86 A38,38 0 1,0 48,10 Z" />
+
+    <!-- Tailor Shears (Crossing Blades) -->
+    <path
+        android:fillColor="#E2E8F0"
+        android:pathData="M42,54 L62,26 C63,25 65,26 64,28 L47,57 Z" />
+    <path
+        android:fillColor="#CBD5E1"
+        android:pathData="M54,54 L34,26 C33,25 31,26 32,28 L49,57 Z" />
+
+    <!-- Scissor Handles in Gold -->
+    <path
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="2.5"
+        android:fillColor="#00000000"
+        android:pathData="M37,64 C33,64 30,67 30,71 C30,75 33,78 37,78 C41,78 44,75 44,71 C44,67 41,64 37,64 Z" />
+    <path
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="2.5"
+        android:fillColor="#00000000"
+        android:pathData="M59,64 C55,64 52,67 52,71 C52,75 55,78 59,78 C63,78 66,75 66,71 C66,67 63,64 59,64 Z" />
+
+    <!-- Pivot Screw in Gold -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M48,54m-2.5,0a2.5,2.5 0 1,0 5,0a2.5,2.5 0 1,0 -5,0" />
+
+    <!-- Golden Shield for "RK" -->
+    <path
+        android:fillColor="#0F172A"
+        android:strokeColor="#FBBF24"
+        android:strokeWidth="1.5"
+        android:pathData="M35,36 L61,36 L61,48 C61,56 48,60 48,60 C48,60 35,56 35,48 Z" />
+
+    <!-- "R" in Gold -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M39,39 L44.5,39 C46,39 47.5,40 47.5,42 C47.5,44 46,45 44.5,45 L41.5,45 L41.5,49 L39,49 Z M41.5,41 L41.5,43.5 L44,43.5 C44.8,43.5 45.3,43.2 45.3,42.5 C45.3,41.8 44.8,41 44,41 Z M44,45 L47.5,49 L45,49 L41.8,45 Z" />
+
+    <!-- "K" in Gold -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M49,39 L51.5,39 L51.5,42.8 L55.2,39 L58.2,39 L53.8,43.5 L58.5,49 L55.5,49 L51.5,44.2 L51.5,49 L49,49 Z" />
+
+    <!-- 3 Stars at Top -->
+    <path
+        android:fillColor="#FDE68A"
+        android:pathData="M48,15 L48.7,17 L50.8,17 L49.1,18.2 L49.7,20.2 L48,19 L46.3,20.2 L46.9,18.2 L45.2,17 L47.3,17 Z" />
+    <path
+        android:fillColor="#FDE68A"
+        android:pathData="M41,18 L41.5,19.5 L43,19.5 L41.8,20.4 L42.2,21.8 L41,21 L39.8,21.8 L40.2,20.4 L39,19.5 L40.5,19.5 Z" />
+    <path
+        android:fillColor="#FDE68A"
+        android:pathData="M55,18 L55.5,19.5 L57,19.5 L55.8,20.4 L56.2,21.8 L55,21 L53.8,21.8 L54.2,20.4 L53,19.5 L54.5,19.5 Z" />
+
+</vector>

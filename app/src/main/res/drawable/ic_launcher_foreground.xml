@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Golden Measuring Tape Ring -->
+    <path
+        android:strokeColor="#FBBF24"
+        android:strokeWidth="2.5"
+        android:fillColor="#00000000"
+        android:pathData="M54,23 A31,31 0 1,0 54,85 A31,31 0 1,0 54,23 Z" />
+
+    <!-- Measuring Tape Dashes / Ticks -->
+    <path
+        android:strokeColor="#FDE68A"
+        android:strokeWidth="1.5"
+        android:pathData="M54,23 L54,26 M54,85 L54,82 M23,54 L26,54 M85,54 L82,54 M32,32 L34,34 M76,76 L74,74 M32,76 L34,74 M76,32 L74,34" />
+
+    <!-- Tailor Scissors Shears (Open in background) -->
+    <!-- Left Blade pointing up-right -->
+    <path
+        android:fillColor="#E2E8F0"
+        android:pathData="M48,58 L68,30 C69,29 71,30 70,32 L53,61 Z" />
+    <!-- Right Blade pointing up-left -->
+    <path
+        android:fillColor="#CBD5E1"
+        android:pathData="M60,58 L40,30 C39,29 37,30 38,32 L55,61 Z" />
+
+    <!-- Scissor Handles in Gold -->
+    <path
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="3"
+        android:fillColor="#00000000"
+        android:pathData="M42,67 C38,67 35,70 35,74 C35,78 38,81 42,81 C46,81 49,78 49,74 C49,70 46,67 42,67 Z" />
+    <path
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="3"
+        android:fillColor="#00000000"
+        android:pathData="M66,67 C62,67 59,70 59,74 C59,78 62,81 66,81 C70,81 73,78 73,74 C73,70 70,67 66,67 Z" />
+
+    <!-- Golden Scissor Pivot Screw -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M54,58m-2.5,0a2.5,2.5 0 1,0 5,0a2.5,2.5 0 1,0 -5,0" />
+
+    <!-- Golden Needle & Thread Arc -->
+    <path
+        android:strokeColor="#FBBF24"
+        android:strokeWidth="1.2"
+        android:fillColor="#00000000"
+        android:pathData="M30,50 Q40,35 60,35 T78,48" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M73,43 L79,48 L77,50 L71,45 Z" />
+
+    <!-- Center Monogram Shield Badge -->
+    <path
+        android:fillColor="#0F172A"
+        android:strokeColor="#FBBF24"
+        android:strokeWidth="1.5"
+        android:pathData="M41,40 L67,40 L67,52 C67,60 54,64 54,64 C54,64 41,60 41,52 Z" />
+
+    <!-- "R" in Gold -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M45,43 L50.5,43 C52,43 53.5,44 53.5,46 C53.5,48 52,49 50.5,49 L47.5,49 L47.5,53 L45,53 Z M47.5,45 L47.5,47.5 L50,47.5 C50.8,47.5 51.3,47.2 51.3,46.5 C51.3,45.8 50.8,45 50,45 Z M50,49 L53.5,53 L51,53 L47.8,49 Z" />
+
+    <!-- "K" in Gold -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M55,43 L57.5,43 L57.5,46.8 L61.2,43 L64.2,43 L59.8,47.5 L64.5,53 L61.5,53 L57.5,48.2 L57.5,53 L55,53 Z" />
+
+    <!-- 3 Royalty Stars at Top -->
+    <path
+        android:fillColor="#FDE68A"
+        android:pathData="M54,29 L54.7,31 L56.8,31 L55.1,32.2 L55.7,34.2 L54,33 L52.3,34.2 L52.9,32.2 L51.2,31 L53.3,31 Z" />
+    <path
+        android:fillColor="#FDE68A"
+        android:pathData="M47,32 L47.5,33.5 L49,33.5 L47.8,34.4 L48.2,35.8 L47,35 L45.8,35.8 L46.2,34.4 L45,33.5 L46.5,33.5 Z" />
+    <path
+        android:fillColor="#FDE68A"
+        android:pathData="M61,32 L61.5,33.5 L63,33.5 L61.8,34.4 L62.2,35.8 L61,35 L59.8,35.8 L60.2,34.4 L59,33.5 L60.5,33.5 Z" />
+
+</vector>
